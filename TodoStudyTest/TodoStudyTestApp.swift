@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct TodoStudyTestApp: App {
+    
+    @StateObject var vm = TodoMainViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                TodoMainView()
+                    .environmentObject(vm)
+            }
         }
     }
 }
